@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Celebrity = require("../models/Celebrity.model");
 const { asyncConnectDB } = require("../configs/db.config");
 
+// Database connection
 asyncConnectDB();
 
 const celebrities = [
@@ -36,10 +37,9 @@ const celebrities = [
   .catch((err) => console.error(`Error when seeding celebrities ${err}`)); */
 
 // ****************************************************************************************
-//  Seeding with  ASYNC ... AWAIT
+//  Seeding with ASYNC ... AWAIT
 // ****************************************************************************************
-
-const seedDatabase = async () => {
+const seedDb = async () => {
   try {
     const celebritiesFromDB = await Celebrity.create(celebrities);
     console.log(
@@ -47,8 +47,8 @@ const seedDatabase = async () => {
     );
     await mongoose.connection.close();
   } catch (error) {
-    console.error(`Error when seeding celebrities ${error}`);
+    console.error(`Error when seeding celebrities ${err}`);
   }
 };
 
-seedDatabase();
+seedDb();
