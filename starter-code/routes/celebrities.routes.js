@@ -26,7 +26,6 @@ router.get("/celebrities/:id", (req, res) => {
       console.log(foundCeleb);
       res.render("celebrities/celebrity-details", foundCeleb);
     })
-    // Something for next goes here
     .catch((err) => console.log(`Error: ${err}`));
 });
 
