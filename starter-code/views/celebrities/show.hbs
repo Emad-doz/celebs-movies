@@ -2,3 +2,11 @@
 
 <p><b>Occupation:</b> {{occupation}}</p>
 <p><b>Catch-Phrase:</b> {{catchPhrase}}</p>
+
+<a href="/celebrities/{{this._id}}/edit">Edit Celeb Info</a>
+<form action="/celebrities/{{this._id}}/delete" method="post">
+  <button type="submit">Delete Celeb</button>
+</form>
+<hr>
+<a href="/celebrities">See All Celebs</a>
+<a href="/">Home</a>

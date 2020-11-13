@@ -1,0 +1,27 @@
+<section>
+  <h2>Movie Details</h2>
+
+  <img src="{{image}}" alt="movie-poster">
+  <p><b>Title:</b> {{title}}</p>
+  <p><b>Plot:</b> {{plot}}</p>
+  <p><b>Genre:</b> {{genre}}</p>
+  <p><b>Cast:</b></p>
+  {{#if cast}}
+  <ul>
+    {{#each cast}}
+    <li>{{this.name}}</li>
+    {{/each}}
+  </ul>
+  {{else}}
+  <p>The celebrities to this movie aren't saved in our database. <span><a href="/celebrities/new">Feel free to add
+        them</a></span> </p>
+  {{/if}}
+
+  <a href="/movies/{{this._id}}/edit">Edit Movie</a>
+  <form action="/movies/{{this._id}}/delete" method="post">
+    <button type="submit">Delete Celeb</button>
+  </form>
+  <hr>
+  <a href="/movies/">See all movies</a>
+  <a href="/">Home</a>
+</section>

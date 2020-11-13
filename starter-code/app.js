@@ -46,6 +46,7 @@ app.use(favicon(path.join(__dirname, "public", "images", "favicon.ico")));
 app.locals.title = "Celebrities & Movies CRUD";
 
 app.use("/", require("./routes/index"));
+app.use("/", require("./routes/movies.routes"));
 app.use("/", require("./routes/celebrities.routes"));
 
 module.exports = app;

@@ -1,0 +1,10 @@
+<h2>Movies found in the database</h2>
+
+{{#each moviesFromDB}}
+<hr>
+<p>{{title}}</p>
+<a href="/movies/{{this._id}}">See More Details</a>
+<form action="/movies/{{this._id}}/delete" method="post">
+  <button type="submit">Delete Movie</button>
+</form>
+{{/each}}
