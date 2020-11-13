@@ -6,7 +6,7 @@ const mongoURI = "mongodb://localhost/celebs-movies";
 // ****************************************************************************************
 exports.connectDB = () =>
   mongoose
-    .connect(mongoURI, {
+    .connect(process.env.MONGO_ATLAS_URI || mongoURI, {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -25,7 +25,7 @@ exports.connectDB = () =>
 // ****************************************************************************************
 exports.asyncConnectDB = async () => {
   try {
-    const db = await mongoose.connect(mongoURI, {
+    const db = await mongoose.connect(process.env.MONGO_ATLAS_URI || mongoURI, {
       useCreateIndex: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
